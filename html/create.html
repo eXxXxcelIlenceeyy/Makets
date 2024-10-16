@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/create.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="step1">
+            <header class="header">
+                <a href="#" class="logo__wrap">
+                    <h1 class="title">Telegrow</h1>
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link">Create campaingn</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">My campaigns</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <h1 class="step__title">Create campaign</h1>
+                <div class="desc__step1">
+                    <h2 class="desc__1p">Step 1* - create an ad</h2>
+                </div>
+                <br>
+                <form action="#" method="post">
+                    <div class="form__text">
+                        <legend>Insert the text of your ad*</legend>
+                        <input required placeholder="Insert text" class="form__input" type="text" name="text" id="text">
+                    </div>
+                    <div class="form__file">
+                        <legend>Add an image of short video</legend>
+                        <input required type="file" id="real-input" hidden />
+                        <label for="real-input" class="form__input custom-file-upload">
+                            Place the image of video
+                        </label>
+                    </div>
+                    <div class="form__link">
+                        <legend>Ad a button with a link *</legend>
+                        <input required placeholder="Insert the name of the link" class="form__input" type="url"
+                            name="link" id="link">
+                        <input required placeholder="Insert the link Link" class="form__input" type="url" name="link"
+                            id="link">
+                    </div>
+                    <div class="form_submit">
+                        <legend>Add one more link</legend>
+                        <input required class="form__input submit" type="submit" value="Save and continue" id="submit">
+                    </div>
+                </form>
+            </div>
+        </section>
+        <script>
+            const realInput = document.getElementById('real-input');
+            realInput.addEventListener('change', function () {
+                const fileName = realInput.value.split('\\').pop();
+                document.querySelector('.custom-file-upload').textContent = fileName || 'Загрузить файл';
+            });
+        </script>
+    </div>
+</body>
+
+</html>
