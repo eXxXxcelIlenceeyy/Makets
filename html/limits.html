@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/limits.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="step4">
+            <header class="header">
+                <a href="#" class="logo__wrap">
+                    <h1 class="title">Telegrow</h1>
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link">Create campaingn</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">My campaigns</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <h1 class="step__title">Create campaign</h1>
+                <div class="desc__step4">
+                    <h2 class="desc__4p">Step 4 - limits</h2>
+                    <br>
+                    <h2 class="desc__4p">You can control the number of impressions by:</h2>
+                    <br>
+                    <h2 class="desc__4p">- Setting a daily limit to spread your ads out better, like 1000 impressions a
+                        day.</h2>
+                    <br>
+                    <h2 class="desc__4p">- Setting an overall limit to test the ad or adjust the budget. You can cap the
+                        impressions, see how it performs, and then restart it.</h2>
+                </div>
+                <form action="#" method="post">
+                    <div class="select">
+                        <div class="selectWrapper">
+                            <div class="selectCustom js-selectCustom">
+                                <div class="selectCustom-trigger">Select limit</div>
+                                <div class="selectCustom-options">
+                                    <div class="selectCustom-option" data-value="ds">Limit per day</div>
+                                    <div class="selectCustom-option" data-value="fe">Limit per all time</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="set-limit">Set limit</button>
+                    <div class="flex-container">
+                        <button type="button" class="btn">&lt;Back</button>
+                        <button type="button" class="btn">Skip</button>
+                        <input required class="form__input submit" type="submit" value="Save and continue" id="submit">
+                    </div>
+                </form>
+
+            </div>
+        </section>
+        <script>
+            const elSelectCustom = document.getElementsByClassName("js-selectCustom")[0];
+            const elSelectCustomValue = elSelectCustom.children[0];
+            const elSelectCustomOptions = elSelectCustom.children[1];
+            const defaultLabel = elSelectCustomValue.getAttribute("data-value");
+
+            // Listen for each custom option click
+            Array.from(elSelectCustomOptions.children).forEach(function (elOption) {
+                elOption.addEventListener("click", (e) => {
+                    // Update custom select text too
+                    elSelectCustomValue.textContent = e.target.textContent;
+                    // Close select
+                    elSelectCustom.classList.remove("isActive");
+                });
+            });
+
+            // Toggle select on label click
+            elSelectCustomValue.addEventListener("click", (e) => {
+                elSelectCustom.classList.toggle("isActive");
+            });
+
+            // close the custom select when clicking outside.
+            document.addEventListener("click", (e) => {
+                const didClickedOutside = !elSelectCustom.contains(event.target);
+                if (didClickedOutside) {
+                    elSelectCustom.classList.remove("isActive");
+                }
+            });
+        </script>
+</body>
+
+</html>
