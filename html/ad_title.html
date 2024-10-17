@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/ad_title.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <section class="step5">
+            <header class="header">
+                <a href="#" class="logo__wrap">
+                    <h1 class="title">Telegrow</h1>
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#" class="nav__link">Create campaingn</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">My campaigns</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <h1 class="step__title">Create campaign</h1>
+                <div class="desc__step5">
+                    <h2 class="desc__5p">Step 5 - Ad title*</h2>
+                </div>
+                <br>
+                <form action="#" method="post">
+                    <div class="form__text">
+                        <legend>Write a title for this ad. It will be displayed in your list of ads.</legend>
+                        <input required placeholder="Insert title" class="form__input" type="text" name="text"
+                            id="text">
+                    </div>
+                    <div class="desc__step5">
+                        <h2 class="desc__5p">Step 6 - Add filters for your ad</h2>
+                    </div>
+                    <div class="form__checkbox">
+                        <legend>Select filters</legend>
+                        <br>
+                        <input type="checkbox" name="filter" id="filter" value="yes">
+                        <label for="filter">Only with subscription</label>
+                        <br>
+                    </div>
+                    <div class="flex-container">
+                        <button type="button" class="btn">&lt;Back</button>
+                        <input required class="submit" type="submit" value="Start campaign" id="submit">
+                    </div>
+                </form>
+                <footer class="footer">
+                    <p class="footer__text">
+                        Your campaign has been sent to moderation 🎉. It will be started once the it is approved. You
+                        can
+                        follow
+                        the status in the list of campaigns.
+                    </p>
+                </footer>
+            </div>
+        </section>
+        <script>
+            const realInput = document.getElementById('real-input');
+            realInput.addEventListener('change', function () {
+                const fileName = realInput.value.split('\\').pop();
+                document.querySelector('.custom-file-upload').textContent = fileName || 'Загрузить файл';
+            });
+        </script>
+    </div>
+</body>
+
+</html>

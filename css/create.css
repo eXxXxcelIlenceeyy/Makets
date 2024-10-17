@@ -41,8 +41,7 @@ form {
 
 input[type="text"],
 input[type="file"],
-input[type="url"],
-input[type="submit"] {
+input[type="url"] {
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
@@ -126,6 +125,10 @@ body {
     font-size: 25px;
 }
 
+form {
+    font-size: 1.125rem;
+}
+
 .form__input {
     display: block;
     width: 100%;
@@ -178,6 +181,13 @@ body {
 }
 
 .submit {
+    display: block;
+    text-align: center;
+    font-size: 1.125rem;
+    padding: 0.813rem 5.3rem;
+    font-weight: 400;
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
     cursor: pointer;
     background-color: var(--bg-input);
     color: #fff;
