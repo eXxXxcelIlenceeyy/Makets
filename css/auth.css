@@ -33,6 +33,7 @@ p {
 
 img {
     max-width: 100%;
+    min-width: 37.5px;
 }
 
 html,
@@ -52,6 +53,7 @@ body {
     margin: 0 auto;
     max-width: 1440px;
     height: 100vh;
+    padding: 20px;
 }
 
 .auth {
